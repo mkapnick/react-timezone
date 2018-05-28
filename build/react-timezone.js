@@ -7,7 +7,7 @@
 		exports["ReactTimezone"] = factory(require("react"));
 	else
 		root["ReactTimezone"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_6__) {
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_6__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1612,9 +1612,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 		module.exports = classNames;
 	} else if (true) {
 		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
 			return classNames;
-		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else {
 		window.classNames = classNames;
@@ -1657,12 +1657,12 @@ if(false) {
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(15)(undefined);
+exports = module.exports = __webpack_require__(15)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".timezone-picker {\n  display: inline-block;\n  font: 13px sans-serif;\n  position: relative;\n}\n.timezone-picker-textfield input {\n  width: 100%;\n  padding: 9px 12px;\n  font: inherit;\n  box-sizing: border-box;\n  outline: 0;\n  background: #fff;\n  border: 1px solid #e6ebec;\n  border-radius: 2px;\n}\n.timezone-picker-list {\n  position: relative;\n  top: 100%;\n  left: 0;\n  right: 0;\n  max-height: 200px;\n  overflow-y: auto;\n  margin: 0;\n  padding: 0;\n  border: 1px solid #e6ebec;\n  margin-top: -1px;\n  border-radius: 0 0 3px 3px;\n  display: none;\n}\n.timezone-picker-list-item {\n  color: #444;\n  padding: 5px 12px;\n  cursor: pointer;\n  outline: none;\n  display: block;\n  border: 0;\n  width: 100%;\n  text-align: left;\n  border-radius: 0;\n  font: inherit;\n}\n.timezone-picker-list-item-active {\n  background: #ececec;\n}\n.timezone-picker-open .timezone-picker-list {\n  display: block;\n}\n.timezone-picker-selected .timezone-picker-textfield input {\n  color: #474747;\n}\n", ""]);
+exports.push([module.i, ".timezone-picker {\n  display: inline-block;\n  font: 13px sans-serif;\n  position: relative;\n}\n.timezone-picker-textfield input {\n  width: 100%;\n  padding: 9px 12px;\n  font: inherit;\n  box-sizing: border-box;\n  outline: 0;\n  background: #fff;\n  border: 1px solid #e6ebec;\n  border-radius: 2px;\n}\n.timezone-picker-list {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  max-height: 200px;\n  overflow-y: auto;\n  margin: 0;\n  padding: 0;\n  border: 1px solid #e6ebec;\n  margin-top: -1px;\n  border-radius: 0 0 3px 3px;\n  display: none;\n}\n.timezone-picker-list-item {\n  color: #444;\n  padding: 5px 12px;\n  cursor: pointer;\n  outline: none;\n  display: block;\n  border: 0;\n  width: 100%;\n  text-align: left;\n  border-radius: 0;\n  font: inherit;\n}\n.timezone-picker-list-item-active {\n  background: #ececec;\n}\n.timezone-picker-open .timezone-picker-list {\n  display: block;\n}\n.timezone-picker-selected .timezone-picker-textfield input {\n  color: #818a91;\n}\n", ""]);
 
 // exports
 
@@ -1819,7 +1819,7 @@ module.exports = function(list, options) {
 
 	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 	// tags it will allow on a page
-	if (!options.singleton) options.singleton = isOldIE();
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
 
 	// By default, add <style> tags to the <head> element
 	if (!options.insertInto) options.insertInto = "head";
