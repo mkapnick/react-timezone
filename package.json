@@ -36,7 +36,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.0",
+    "uglifyjs": "^2.4.11"
   },
   "repository": {
     "type": "git",
